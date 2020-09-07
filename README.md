@@ -1,10 +1,26 @@
+### Short brief
+
+This documentation written for the AMS to S3 upload and concatenate MP4 files.
+
 **Here is stream concatenation and uploading the S3 works.**
 
 Firstly, the process begins when a new recorded stream is uploaded to S3. After the completion of the upload, Ant Media Server writes Stream ID with `processStreams.sh` script to the following file `/home/ubuntu/scripts/streamListsQueue.txt` file.
 
-Secondly, we have `concatenate_mp4.sh` script in `/etc/crontab file`. `*/3 * * * * root /bin/bash -l -c /home/ubuntu/scripts/concatenate_mp4.sh > /home/ubuntu/scripts/myErrorLog.txt 2>&1`
+**AMS Side Process**
+We need to add `settings.muxerFinishScript=/home/ubuntu/scripts/processStreams.sh` parameter in `/usr/local/antmedia/webapps/{Application-Name}/WEB-INF/red5-web.properties`. 
+
+Here are [AWS S3 Configuration](https://github.com/ant-media/Ant-Media-Server/wiki/Amazon-(AWS)-S3-Integration) and [User-Defined scripts](https://github.com/ant-media/Ant-Media-Server/wiki/User-defined-Scripts)
+
+> Please be sure your script is in right path and enable MP4 recording in Application settings.
+
+**Instance Side Process**
+
+We have `concatenate_mp4.sh` script in `/etc/crontab file`. `*/3 * * * * root /bin/bash -l -c /home/ubuntu/scripts/concatenate_mp4.sh > /home/ubuntu/scripts/myErrorLog.txt 2>&1`
 
 This means `concatenate_mp4.sh` works every 3 min.
+
+You need to add below codes for the S3 Mount
+`sudo s3fs s3Bucket /mnt/s3_n/ -o allow_other -o default_acl='public-read'`
 
 Let me explain how `concatenate_mp4.sh` script process works;
 
