@@ -3,12 +3,12 @@
 # Usage is sudo bash /home/mypc/softwares/concatenate_mp4.sh
 
 #How to use concatenate_mp4.sh process:
-#1- Checking concatenate_mp4.sh script is already working. If concatenate_mp4.sh process is already working, process will finish.
-#2- Check first line in streamListsQueue.txt, if it's an empty exit, process will finish.
-#3- Get Stream ID in streamListsQueue.txt first Item. 
-#4- Checking original Stream ID file doesn't exist. If streamID.mp4 does not exist, process will finish.
-#5- The next step is script tries streamId_1.mp4 after that continues _2.mp4 _3.mp4 checks files is exist. 
-#6- The script tries 3 more files if exist. After that, if files don't exist, process will be finished and removing stream ID in streamListsQueue.txt
+#1- Check if any process of concatenate_mp4.sh script is already working. If there is a running process, the process will finish.
+#2- Check the first line in streamListsQueue.txt, if it's an empty exit, the process will finish.
+#3- Get Stream ID in streamListsQueue.txt first Item.
+#4- Check if original file belongs to Stream ID exists. If streamID.mp4 does not exist, the process will finish.
+#5- The next step is that script checks if streamId_1.mp4,  streamId_2.mp4,  streamId_3.mp4, etc. files exist. If a stream file exists, concatenate process begins in concatenate_files function. Also, concatenate process is working on the S3 mount.
+#6- The script tries 3 more files if they exist.  If files don't exist, process will be finished and removing stream ID in streamListsQueue.txt
 
 function currentFileCheck(){
     	if [ ! -f $currentStream ]
