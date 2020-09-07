@@ -1,6 +1,6 @@
 ### Short brief
 
-This documentation written for the AMS to S3 upload and concatenate MP4 files.
+This documentation written for the AMS to S3 upload and concatenate same Stream ID MP4 files.
 
 **Here is stream concatenation and uploading the S3 works.**
 
