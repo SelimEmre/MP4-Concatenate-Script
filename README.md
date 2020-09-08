@@ -8,6 +8,7 @@ Firstly, the process begins when a new recorded stream is uploaded to S3. After 
 
 
 **AMS Side Process**
+
 We need to add `settings.muxerFinishScript=/home/ubuntu/scripts/processStreams.sh` parameter in `/usr/local/antmedia/webapps/{Application-Name}/WEB-INF/red5-web.properties`. 
 
 Here are [AWS S3 Configuration](https://github.com/ant-media/Ant-Media-Server/wiki/Amazon-(AWS)-S3-Integration) and [User-Defined scripts](https://github.com/ant-media/Ant-Media-Server/wiki/User-defined-Scripts)
