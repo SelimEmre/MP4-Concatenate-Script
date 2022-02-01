@@ -2,7 +2,7 @@
 
 This documentation written for the AMS to S3 upload and concatenate same Stream ID MP4 files.
 
-**Here is stream concatenation and uploading the S3 works.**
+**How is Stream concatenation and uploading the S3 works?**
 
 Firstly, the process begins when a new recorded stream is uploaded to S3. After the completion of the upload, Ant Media Server writes Stream ID with `processStreams.sh` script to the following file `/home/ubuntu/scripts/streamListsQueue.txt` file.
 
