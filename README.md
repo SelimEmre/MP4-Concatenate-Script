@@ -36,6 +36,6 @@ You need to add below codes for the S3 Mount
 
 Lastly, if the concatenate process works normally, script will write the logs in `concatenated_streams.txt` For example: `/mnt/s3_n/vod/streams/677658101701365982735382_1.mp4 concatenated original file -> /mnt/s3_n/vod/streams/677658101701365982735382.mp4`
 
-Here is usage example video: [![Watch the video](https://img.youtube.com/vi/E2H6GXvOkps/maxresdefault.jpg)](https://youtu.be/E2H6GXvOkps)
+Here is the example usage video: [![Watch the video](https://img.youtube.com/vi/E2H6GXvOkps/maxresdefault.jpg)](https://youtu.be/E2H6GXvOkps)
 
 Note: Please use S3 Fuse folder for concatenating.
